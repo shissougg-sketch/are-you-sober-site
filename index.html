@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You Sober? - Sobriety Check-In App</title>
+    <meta name="description" content="A simple accountability app that helps you stay on track. Check in every 48 hours or your trusted contacts get notified.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #4361ee;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .hero .tagline {
+            font-size: 22px;
+            color: #a0a0a0;
+            margin-bottom: 24px;
+        }
+
+        .hero .description {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* How It Works Section */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #4361ee;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: #a0a0a0;
+            font-size: 15px;
+        }
+
+        /* SMS Section */
+        .sms-section {
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .sms-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .sms-section p {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .sms-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sms-section li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #ccc;
+        }
+
+        .sms-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Privacy Section */
+        .privacy {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .privacy h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .privacy p {
+            color: #a0a0a0;
+            font-size: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .coming-soon {
+            font-size: 18px;
+            color: #a0a0a0;
+            margin-bottom: 8px;
+        }
+
+        .platforms {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .tagline {
+                font-size: 18px;
+            }
+
+            .section h2 {
+                font-size: 26px;
+            }
+
+            .sms-section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <span class="badge">Coming Soon</span>
+            <h1>Are You Sober?</h1>
+            <p class="tagline">Stay accountable. Stay connected.</p>
+            <p class="description">
+                A simple check-in app for people in recovery. Confirm you're okay every 48 hours,
+                or your trusted contacts will be notified to reach out.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Check In</h3>
+                    <p>Tap "I'm OK" in the app every 48 hours to confirm you're doing well.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Add Contacts</h3>
+                    <p>Add trusted friends or family members as your emergency contacts.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Stay Safe</h3>
+                    <p>If you miss a check-in, your contacts receive an SMS asking them to reach out.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sms-section">
+            <h2>About SMS Notifications</h2>
+            <p>
+                Are You Sober uses SMS text messages to notify your emergency contacts if you miss a check-in.
+                This ensures someone who cares about you can reach out when you might need support.
+            </p>
+            <ul>
+                <li>SMS is only sent to contacts you personally add to the app</li>
+                <li>Notifications are only triggered if you miss your 48-hour check-in window</li>
+                <li>Messages are simple alerts asking your contact to check on you</li>
+                <li>You control who receives notifications and can remove contacts anytime</li>
+            </ul>
+        </section>
+
+        <section class="privacy">
+            <h2>Your Privacy Matters</h2>
+            <p>
+                Your data stays private. We only store what's needed to send check-in reminders
+                and emergency alerts. Your contacts are never shared or used for marketing.
+            </p>
+        </section>
+
+        <footer>
+            <p class="coming-soon">Coming soon to iOS and Android</p>
+            <p class="platforms">&copy; 2025 Are You Sober?</p>
+        </footer>
+    </div>
+</body>
+</html>
