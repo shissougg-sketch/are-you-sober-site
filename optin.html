@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS Opt-In Process - Are You Sober?</title>
-    <meta name="description" content="How users consent to SMS notifications in the Are You Sober? app.">
+    <title>Contact SMS Consent - Are You Sober?</title>
+    <meta name="description" content="How trusted contacts consent to receive SMS notifications from Are You Sober?">
     <style>
         * {
             margin: 0;
@@ -63,28 +63,6 @@
             margin-bottom: 16px;
         }
 
-        .screenshot-container {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 24px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .screenshot-container img {
-            max-width: 100%;
-            max-height: 600px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .screenshot-caption {
-            color: #888;
-            font-size: 14px;
-            margin-top: 16px;
-            font-style: italic;
-        }
-
         .highlight-box {
             background: rgba(67, 97, 238, 0.1);
             border-radius: 12px;
@@ -96,13 +74,24 @@
             margin-bottom: 0;
         }
 
-        .consent-text {
+        .message-box {
             background: rgba(255, 255, 255, 0.05);
             border-left: 4px solid #4361ee;
             padding: 16px 20px;
             margin: 20px 0;
-            font-style: italic;
+            font-family: monospace;
+            font-size: 14px;
             color: #ccc;
+            white-space: pre-wrap;
+        }
+
+        .message-label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         ul {
@@ -113,6 +102,35 @@
 
         li {
             margin-bottom: 8px;
+        }
+
+        .step-list {
+            counter-reset: steps;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: steps;
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .step-list li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: #4361ee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
         }
 
         .legal-links {
@@ -140,6 +158,32 @@
             font-size: 14px;
         }
 
+        .response-options {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        .response-option {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px 16px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .response-option strong {
+            color: #4361ee;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .response-option span {
+            color: #888;
+            font-size: 14px;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 28px;
@@ -148,6 +192,10 @@
             h2 {
                 font-size: 20px;
             }
+
+            .response-options {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -155,45 +203,83 @@
     <div class="container">
         <a href="index.html" class="back-link">&larr; Back to Home</a>
 
-        <h1>SMS Opt-In Process</h1>
-        <p class="subtitle">How users consent to SMS notifications in Are You Sober?</p>
+        <h1>Contact SMS Consent</h1>
+        <p class="subtitle">How trusted contacts consent to receive SMS notifications</p>
 
-        <h2>Explicit Consent During Registration</h2>
+        <h2>How It Works</h2>
         <p>
-            Users must provide explicit consent to SMS notifications during account registration in our mobile app.
-            The signup form includes a mandatory checkbox that must be selected before the account can be created.
+            When an Are You Sober user adds you as a trusted contact, you'll receive an SMS asking for your consent before any alert messages are sent.
         </p>
 
-        <div class="screenshot-container">
-            <img src="optin/optin.PNG" alt="Are You Sober app signup screen showing SMS consent checkbox">
-            <p class="screenshot-caption">Mobile app signup screen with mandatory SMS consent checkbox</p>
+        <ol class="step-list">
+            <li>Someone adds your phone number as a trusted contact in the Are You Sober app</li>
+            <li>You receive an SMS asking you to confirm or decline</li>
+            <li>Reply <strong>YES</strong> to accept or <strong>NO</strong> to decline</li>
+            <li>If you accept, you'll receive alerts only if they miss a check-in</li>
+        </ol>
+
+        <h2>Consent Request Message</h2>
+        <p>When someone adds you as a trusted contact, you'll receive this message:</p>
+        <div class="message-box">
+            <div class="message-label">SMS You'll Receive</div>
+Are You Sober: [Name] wants to add you as a trusted contact. If they miss a check-in, you'll get an SMS alert. Reply YES to accept, NO to decline. Msg & data rates may apply. Reply STOP to opt out, HELP for help.
         </div>
 
-        <h2>Consent Language</h2>
-        <p>The checkbox requires users to agree to the following statement:</p>
-        <div class="consent-text">
-            "I consent to SMS notifications being sent to my emergency contacts if I miss a check-in"
+        <h2>Your Response Options</h2>
+        <div class="response-options">
+            <div class="response-option">
+                <strong>Reply YES</strong>
+                <span>Accept and receive alerts if they miss a check-in</span>
+            </div>
+            <div class="response-option">
+                <strong>Reply NO</strong>
+                <span>Decline - you won't receive any messages</span>
+            </div>
+            <div class="response-option">
+                <strong>Reply STOP</strong>
+                <span>Opt out of all messages permanently</span>
+            </div>
+            <div class="response-option">
+                <strong>Reply HELP</strong>
+                <span>Get support information</span>
+            </div>
         </div>
 
+        <h2>Confirmation Message</h2>
+        <p>After replying YES, you'll receive this confirmation:</p>
+        <div class="message-box">
+            <div class="message-label">Confirmation SMS</div>
+Are You Sober: You are now a trusted contact for [Name]. You may receive alerts if they miss a check-in. Reply STOP anytime to opt out, HELP for help.
+        </div>
+
+        <h2>Alert Messages</h2>
+        <p>If the person you're supporting misses a check-in, you'll receive a message like this:</p>
+        <div class="message-box">
+            <div class="message-label">Sample Alert</div>
+Are You Sober: [Name] has not checked in to confirm their sobriety. Please reach out to them. Reply STOP to opt out, HELP for help.
+        </div>
+
+        <h2>Message Frequency</h2>
         <div class="highlight-box">
             <p>
-                <strong>Important:</strong> The "Create Account" button remains disabled until all three consent
-                checkboxes are selected (Terms of Service, Privacy Policy, and SMS Consent). Users cannot
-                create an account without providing explicit SMS consent.
+                <strong>Maximum 1 message per 48 hours per contact.</strong><br>
+                Alerts are only sent when a check-in is missed. No marketing or promotional messages are ever sent.
             </p>
         </div>
 
-        <h2>What Users Are Consenting To</h2>
+        <h2>Opt-Out Anytime</h2>
         <ul>
-            <li>SMS alerts sent to their designated emergency contacts when they miss a 48-hour check-in</li>
-            <li>Message frequency: Maximum of 1 message per 48 hours per contact</li>
-            <li>Non-marketing, accountability-only notifications</li>
+            <li><strong>Reply STOP</strong> to any message to stop all future messages</li>
+            <li><strong>Reply HELP</strong> to receive support information</li>
+            <li>Contact <a href="mailto:support@areyousober.app" style="color: #4361ee;">support@areyousober.app</a> for assistance</li>
         </ul>
 
-        <h2>Opt-Out Options</h2>
+        <h2>Important Information</h2>
         <ul>
-            <li><strong>For app users:</strong> Remove emergency contacts at any time in app Settings</li>
-            <li><strong>For message recipients:</strong> Reply STOP to any message to opt out of future alerts</li>
+            <li>Message and data rates may apply</li>
+            <li>Carriers are not liable for delayed or undelivered messages</li>
+            <li>Your phone number is used only for accountability alerts and is never shared for marketing</li>
+            <li>Only contacts who reply YES receive any alert messages</li>
         </ul>
 
         <div class="legal-links">

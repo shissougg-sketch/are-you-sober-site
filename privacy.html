@@ -153,14 +153,14 @@
         <h3>Account Information</h3>
         <p>When you create an account, we collect:</p>
         <ul>
-            <li><strong>Name:</strong> Used to personalize the app and identify you to your emergency contacts</li>
+            <li><strong>Name:</strong> Used to personalize the app and identify you to your trusted contacts</li>
             <li><strong>Email Address:</strong> Used for account authentication, password reset, and important service notifications</li>
             <li><strong>Phone Number (optional):</strong> May be used for account recovery</li>
             <li><strong>Password:</strong> Stored securely using industry-standard encryption (bcrypt)</li>
         </ul>
 
-        <h3>Emergency Contact Information</h3>
-        <p>When you add emergency contacts, we collect:</p>
+        <h3>Trusted Contact Information</h3>
+        <p>When you add trusted contacts, we collect:</p>
         <ul>
             <li><strong>Contact Name:</strong> Used to identify the contact in your app</li>
             <li><strong>Contact Phone Number:</strong> Used to send SMS notifications if you miss a check-in</li>
@@ -185,7 +185,7 @@
         <ul>
             <li><strong>Provide the Service:</strong> Enable check-ins, track your check-in history, and manage your contacts</li>
             <li><strong>Send Reminders:</strong> Push notifications to remind you before your check-in window expires</li>
-            <li><strong>Emergency Notifications:</strong> Send SMS messages to your emergency contacts if you miss a check-in</li>
+            <li><strong>Emergency Notifications:</strong> Send SMS messages to your trusted contacts if you miss a check-in</li>
             <li><strong>Account Security:</strong> Authenticate your identity and enable password reset</li>
             <li><strong>Improve the Service:</strong> Understand usage patterns to make the app better</li>
         </ul>
@@ -199,23 +199,31 @@
 
         <h2>2A. SMS Text Messaging</h2>
 
-        <h3>Opt-In</h3>
+        <h3>User Opt-In</h3>
         <p>
             Users provide explicit consent to our SMS service during account registration by checking a required
-            checkbox that states: "I consent to SMS notifications being sent to my emergency contacts if I miss
+            checkbox that states: "I consent to SMS notifications being sent to my trusted contacts if I miss
             a check-in." Account creation is blocked until this consent is provided.
+        </p>
+
+        <h3>Contact Opt-In (Required for All SMS Recipients)</h3>
+        <p>
+            When a user adds a trusted contact (Premium feature), the contact receives an SMS consent request.
+            The contact must reply YES to confirm they want to receive alerts. Only contacts who explicitly
+            opt-in by replying YES will receive any alert messages. Contacts who reply NO or do not respond
+            will not receive any messages.
         </p>
 
         <h3>Message Frequency</h3>
         <p>
-            Emergency contacts receive up to 1 SMS message per 48-hour period, only when a user misses their
+            Trusted contacts receive up to 1 SMS message per 48-hour period, only when a user misses their
             check-in window. No marketing or promotional messages are ever sent.
         </p>
 
         <h3>Opt-Out</h3>
         <p>
             Message recipients can opt out at any time by replying STOP to any message. App users can remove
-            emergency contacts through the app settings at any time.
+            trusted contacts through the app settings at any time.
         </p>
 
         <h3>Help</h3>
@@ -236,7 +244,7 @@
 
         <h3>Service Providers</h3>
         <ul>
-            <li><strong>Twilio:</strong> We use Twilio to send SMS messages to your emergency contacts.
+            <li><strong>Twilio:</strong> We use Twilio to send SMS messages to your trusted contacts.
                 Twilio receives phone numbers solely for message delivery.
                 <a href="https://www.twilio.com/legal/privacy" target="_blank">Twilio's Privacy Policy</a></li>
             <li><strong>Expo/Apple/Google:</strong> Push notification services receive your device token to deliver reminders</li>
@@ -246,7 +254,7 @@
         <ul>
             <li>We never sell your personal information</li>
             <li>We never share your data for advertising purposes</li>
-            <li>We never share your emergency contacts' information with third parties for their own purposes</li>
+            <li>We never share your trusted contacts' information with third parties for their own purposes</li>
         </ul>
 
         <h2>4. Data Storage and Security</h2>
@@ -275,7 +283,7 @@
             <li><strong>Correction:</strong> Update your name, email, or phone number through the app</li>
             <li><strong>Deletion:</strong> Delete your account and all associated data at any time through Settings</li>
             <li><strong>Export:</strong> Request a copy of your data (contact us at the email below)</li>
-            <li><strong>Withdraw Consent:</strong> Remove emergency contacts or stop using the service at any time</li>
+            <li><strong>Withdraw Consent:</strong> Remove trusted contacts or stop using the service at any time</li>
         </ul>
 
         <h2>7. Children's Privacy</h2>
