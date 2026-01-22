@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Opt-In Process - Are You Sober?</title>
+    <meta name="description" content="How users consent to SMS notifications in the Are You Sober? app.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #4361ee;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        p {
+            color: #ccc;
+            margin-bottom: 16px;
+        }
+
+        .screenshot-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .screenshot-container img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-caption {
+            color: #888;
+            font-size: 14px;
+            margin-top: 16px;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .consent-text {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #4361ee;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        ul {
+            color: #ccc;
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .legal-links {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .legal-links a {
+            color: #4361ee;
+            text-decoration: none;
+            margin-right: 24px;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <h1>SMS Opt-In Process</h1>
+        <p class="subtitle">How users consent to SMS notifications in Are You Sober?</p>
+
+        <h2>Explicit Consent During Registration</h2>
+        <p>
+            Users must provide explicit consent to SMS notifications during account registration in our mobile app.
+            The signup form includes a mandatory checkbox that must be selected before the account can be created.
+        </p>
+
+        <div class="screenshot-container">
+            <img src="optin/optin.PNG" alt="Are You Sober app signup screen showing SMS consent checkbox">
+            <p class="screenshot-caption">Mobile app signup screen with mandatory SMS consent checkbox</p>
+        </div>
+
+        <h2>Consent Language</h2>
+        <p>The checkbox requires users to agree to the following statement:</p>
+        <div class="consent-text">
+            "I consent to SMS notifications being sent to my emergency contacts if I miss a check-in"
+        </div>
+
+        <div class="highlight-box">
+            <p>
+                <strong>Important:</strong> The "Create Account" button remains disabled until all three consent
+                checkboxes are selected (Terms of Service, Privacy Policy, and SMS Consent). Users cannot
+                create an account without providing explicit SMS consent.
+            </p>
+        </div>
+
+        <h2>What Users Are Consenting To</h2>
+        <ul>
+            <li>SMS alerts sent to their designated emergency contacts when they miss a 48-hour check-in</li>
+            <li>Message frequency: Maximum of 1 message per 48 hours per contact</li>
+            <li>Non-marketing, accountability-only notifications</li>
+        </ul>
+
+        <h2>Opt-Out Options</h2>
+        <ul>
+            <li><strong>For app users:</strong> Remove emergency contacts at any time in app Settings</li>
+            <li><strong>For message recipients:</strong> Reply STOP to any message to opt out of future alerts</li>
+        </ul>
+
+        <div class="legal-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Are You Sober?</p>
+        </footer>
+    </div>
+</body>
+</html>
