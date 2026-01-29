@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Are You Sober? - Sobriety Check-In App</title>
-    <meta name="description" content="A simple accountability app that helps you stay on track. Check in every 48 hours or your trusted contacts get notified.">
+    <title>Are You SOS? - Your Personal Accountability Partner</title>
+    <meta name="description" content="A simple accountability app with three modes: Sober, Okay, and Safe. Check in regularly or your trusted contacts get notified.">
     <style>
         * {
             margin: 0;
@@ -34,7 +34,7 @@
 
         .badge {
             display: inline-block;
-            background: #4361ee;
+            background: #5a7bff;
             color: #fff;
             padding: 6px 16px;
             border-radius: 20px;
@@ -95,7 +95,7 @@
             justify-content: center;
             width: 50px;
             height: 50px;
-            background: #4361ee;
+            background: #5a7bff;
             border-radius: 50%;
             font-size: 24px;
             font-weight: 700;
@@ -112,9 +112,81 @@
             font-size: 15px;
         }
 
+        /* Modes Section */
+        .modes-section {
+            padding: 60px 20px;
+        }
+
+        .modes-section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .mode-card {
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid;
+            transition: transform 0.2s ease;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .mode-sober {
+            background: rgba(90, 123, 255, 0.15);
+            border-color: #5a7bff;
+        }
+
+        .mode-okay {
+            background: rgba(43, 176, 166, 0.15);
+            border-color: #2bb0a6;
+        }
+
+        .mode-safe {
+            background: rgba(124, 92, 255, 0.15);
+            border-color: #7c5cff;
+        }
+
+        .mode-card .mode-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .mode-card .mode-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .mode-sober .mode-title { color: #5a7bff; }
+        .mode-okay .mode-title { color: #2bb0a6; }
+        .mode-safe .mode-title { color: #7c5cff; }
+
+        .mode-card .mode-question {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .mode-card .mode-description {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+
         /* SMS Section */
         .sms-section {
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(90, 123, 255, 0.1);
             border-radius: 16px;
             padding: 40px;
             margin: 40px 0;
@@ -209,7 +281,7 @@
         }
 
         .sms-terms .legal-links a {
-            color: #4361ee;
+            color: #5a7bff;
             text-decoration: none;
             margin: 0 12px;
         }
@@ -253,6 +325,10 @@
             .sms-section {
                 padding: 24px;
             }
+
+            .modes {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -260,11 +336,11 @@
     <div class="container">
         <section class="hero">
             <span class="badge">Coming Soon</span>
-            <h1>Are You Sober?</h1>
-            <p class="tagline">Stay accountable. Stay connected.</p>
+            <h1>Are You SOS?</h1>
+            <p class="tagline">Stay accountable. Stay connected. Stay safe.</p>
             <p class="description">
-                A simple check-in app for people in recovery. Confirm you're okay every 48 hours,
-                or your trusted contacts will be notified to reach out.
+                A personal check-in app for sobriety, mental health, and safety.
+                Confirm you're okay regularly, or your trusted contacts will be notified to reach out.
             </p>
         </section>
 
@@ -274,7 +350,7 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Check In</h3>
-                    <p>Tap "I'm OK" in the app every 48 hours to confirm you're doing well.</p>
+                    <p>Tap to confirm you're okay on your schedule — every 24 or 48 hours depending on your mode.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
@@ -289,21 +365,45 @@
             </div>
         </section>
 
+        <section class="modes-section">
+            <h2>Choose Your Mode</h2>
+            <div class="modes">
+                <div class="mode-card mode-sober">
+                    <div class="mode-icon">🍷</div>
+                    <div class="mode-title">Sobriety Accountability</div>
+                    <div class="mode-question">"ARE YOU SOBER?"</div>
+                    <p class="mode-description">For people in recovery. Check in every 48 hours to stay accountable.</p>
+                </div>
+                <div class="mode-card mode-okay">
+                    <div class="mode-icon">💚</div>
+                    <div class="mode-title">Mental Health Check-ins</div>
+                    <div class="mode-question">"ARE YOU OKAY?"</div>
+                    <p class="mode-description">For mental health & wellness. Check in every 48 hours to stay connected.</p>
+                </div>
+                <div class="mode-card mode-safe">
+                    <div class="mode-icon">🛡️</div>
+                    <div class="mode-title">Personal Safety</div>
+                    <div class="mode-question">"ARE YOU SAFE?"</div>
+                    <p class="mode-description">For personal safety monitoring. Check in every 24 hours for peace of mind.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="sms-section">
             <h2>About SMS Notifications</h2>
             <p>
-                Are You Sober uses SMS text messages to notify your trusted contacts if you miss a check-in.
+                Are You SOS uses SMS text messages to notify your trusted contacts if you miss a check-in.
                 SMS alerts are a Premium feature. Free users can notify contacts who have the app via push notifications.
             </p>
             <ul>
                 <li>Contacts must explicitly opt-in before receiving any SMS alerts</li>
                 <li>When you add a contact, they receive an SMS asking them to reply YES to confirm</li>
                 <li>Only contacts who confirm consent will receive missed check-in alerts</li>
-                <li>Notifications are only triggered if you miss your 48-hour check-in window</li>
+                <li>Notifications are only triggered if you miss your check-in window</li>
                 <li>You control who receives notifications and can remove contacts anytime</li>
             </ul>
             <p style="margin-top: 16px;">
-                <a href="optin.html" style="color: #4361ee;">Learn more about our contact consent process</a>
+                <a href="optin.html" style="color: #5a7bff;">Learn more about our contact consent process</a>
             </p>
         </section>
 
@@ -312,9 +412,9 @@
             <ul>
                 <li>Trusted contacts must reply YES to a consent request before receiving any alerts</li>
                 <li>Only contacts with confirmed consent receive SMS notifications</li>
-                <li>Message frequency: Up to 1 message per 48 hours per contact (only when check-in is missed)</li>
+                <li>Message frequency: Up to 1 message per 24-48 hours per contact (only when check-in is missed)</li>
                 <li>Reply STOP to any message to opt out of future alerts</li>
-                <li>Reply HELP for support or email support@areyousober.app</li>
+                <li>Reply HELP for support or email support@areyousos.com</li>
                 <li>Message and data rates may apply</li>
                 <li>Carriers are not liable for delayed or undelivered messages</li>
                 <li>Phone numbers are used only for accountability alerts and are never shared for marketing</li>
@@ -336,7 +436,7 @@
 
         <footer>
             <p class="coming-soon">Coming soon to iOS and Android</p>
-            <p class="platforms">&copy; 2025 Are You Sober?</p>
+            <p class="platforms">&copy; 2025 Are You SOS?</p>
         </footer>
     </div>
 </body>

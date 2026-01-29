@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact SMS Consent - Are You Sober?</title>
-    <meta name="description" content="How trusted contacts consent to receive SMS notifications from Are You Sober?">
+    <title>Contact SMS Consent - Are You SOS?</title>
+    <meta name="description" content="How trusted contacts consent to receive SMS notifications from Are You SOS?">
     <style>
         * {
             margin: 0;
@@ -28,7 +28,7 @@
 
         .back-link {
             display: inline-block;
-            color: #4361ee;
+            color: #5a7bff;
             text-decoration: none;
             margin-bottom: 30px;
             font-size: 14px;
@@ -64,7 +64,7 @@
         }
 
         .highlight-box {
-            background: rgba(67, 97, 238, 0.1);
+            background: rgba(90, 123, 255, 0.1);
             border-radius: 12px;
             padding: 20px;
             margin: 24px 0;
@@ -76,7 +76,7 @@
 
         .message-box {
             background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid #4361ee;
+            border-left: 4px solid #5a7bff;
             padding: 16px 20px;
             margin: 20px 0;
             font-family: monospace;
@@ -124,7 +124,7 @@
             top: 0;
             width: 28px;
             height: 28px;
-            background: #4361ee;
+            background: #5a7bff;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -140,7 +140,7 @@
         }
 
         .legal-links a {
-            color: #4361ee;
+            color: #5a7bff;
             text-decoration: none;
             margin-right: 24px;
         }
@@ -174,7 +174,7 @@
         }
 
         .response-option strong {
-            color: #4361ee;
+            color: #5a7bff;
             display: block;
             margin-bottom: 4px;
         }
@@ -182,6 +182,33 @@
         .response-option span {
             color: #888;
             font-size: 14px;
+        }
+
+        .mode-alerts {
+            margin: 20px 0;
+        }
+
+        .mode-alert {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .mode-alert-header {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .mode-sober .mode-alert-header { color: #5a7bff; }
+        .mode-okay .mode-alert-header { color: #2bb0a6; }
+        .mode-safe .mode-alert-header { color: #7c5cff; }
+
+        .mode-alert-text {
+            font-family: monospace;
+            font-size: 13px;
+            color: #a0a0a0;
         }
 
         @media (max-width: 600px) {
@@ -208,11 +235,11 @@
 
         <h2>How It Works</h2>
         <p>
-            When an Are You Sober user adds you as a trusted contact, you'll receive an SMS asking for your consent before any alert messages are sent.
+            When an Are You SOS user adds you as a trusted contact, you'll receive an SMS asking for your consent before any alert messages are sent. Are You SOS supports three modes — Sober (sobriety), Okay (mental health), and Safe (personal safety) — and you may receive alerts for any of these depending on the user's selection.
         </p>
 
         <ol class="step-list">
-            <li>Someone adds your phone number as a trusted contact in the Are You Sober app</li>
+            <li>Someone adds your phone number as a trusted contact in the Are You SOS app</li>
             <li>You receive an SMS asking you to confirm or decline</li>
             <li>Reply <strong>YES</strong> to accept or <strong>NO</strong> to decline</li>
             <li>If you accept, you'll receive alerts only if they miss a check-in</li>
@@ -222,7 +249,7 @@
         <p>When someone adds you as a trusted contact, you'll receive this message:</p>
         <div class="message-box">
             <div class="message-label">SMS You'll Receive</div>
-Are You Sober: [Name] wants to add you as a trusted contact. If they miss a check-in, you'll get an SMS alert. Reply YES to accept, NO to decline. Msg & data rates may apply. Reply STOP to opt out, HELP for help.
+Are You SOS: [Name] wants to add you as a trusted contact. If they miss a check-in, you'll get an SMS alert. Reply YES to accept, NO to decline. Msg & data rates may apply. Reply STOP to opt out, HELP for help.
         </div>
 
         <h2>Your Response Options</h2>
@@ -249,21 +276,32 @@ Are You Sober: [Name] wants to add you as a trusted contact. If they miss a chec
         <p>After replying YES, you'll receive this confirmation:</p>
         <div class="message-box">
             <div class="message-label">Confirmation SMS</div>
-Are You Sober: You are now a trusted contact for [Name]. You may receive alerts if they miss a check-in. Reply STOP anytime to opt out, HELP for help.
+Are You SOS: You are now a trusted contact for [Name]. You may receive alerts if they miss a check-in. Reply STOP anytime to opt out, HELP for help.
         </div>
 
         <h2>Alert Messages</h2>
-        <p>If the person you're supporting misses a check-in, you'll receive a message like this:</p>
-        <div class="message-box">
-            <div class="message-label">Sample Alert</div>
-Are You Sober: [Name] has not checked in to confirm their sobriety. Please reach out to them. Reply STOP to opt out, HELP for help.
+        <p>If the person you're supporting misses a check-in, you'll receive an alert. The message varies based on their selected mode:</p>
+
+        <div class="mode-alerts">
+            <div class="mode-alert mode-sober">
+                <div class="mode-alert-header">Sober Mode (Sobriety Accountability)</div>
+                <div class="mode-alert-text">Are You SOS: [Name] has not checked in to confirm their sobriety. Please reach out to them.</div>
+            </div>
+            <div class="mode-alert mode-okay">
+                <div class="mode-alert-header">Okay Mode (Mental Health Check-ins)</div>
+                <div class="mode-alert-text">Are You SOS: [Name] has not checked in recently. They may need your support. Please reach out.</div>
+            </div>
+            <div class="mode-alert mode-safe">
+                <div class="mode-alert-header">Safe Mode (Personal Safety)</div>
+                <div class="mode-alert-text">Are You SOS: [Name] has not checked in to confirm their safety. Please try to reach them immediately.</div>
+            </div>
         </div>
 
         <h2>Message Frequency</h2>
         <div class="highlight-box">
             <p>
-                <strong>Maximum 1 message per 48 hours per contact.</strong><br>
-                Alerts are only sent when a check-in is missed. No marketing or promotional messages are ever sent.
+                <strong>Maximum 1 message per 24-48 hours per contact.</strong><br>
+                Alerts are only sent when a check-in is missed. Check-in intervals vary by mode: 24 hours for Safe mode, 48 hours for Sober and Okay modes. No marketing or promotional messages are ever sent.
             </p>
         </div>
 
@@ -271,7 +309,7 @@ Are You Sober: [Name] has not checked in to confirm their sobriety. Please reach
         <ul>
             <li><strong>Reply STOP</strong> to any message to stop all future messages</li>
             <li><strong>Reply HELP</strong> to receive support information</li>
-            <li>Contact <a href="mailto:support@areyousober.app" style="color: #4361ee;">support@areyousober.app</a> for assistance</li>
+            <li>Contact <a href="mailto:support@areyousos.com" style="color: #5a7bff;">support@areyousos.com</a> for assistance</li>
         </ul>
 
         <h2>Important Information</h2>
@@ -288,7 +326,7 @@ Are You Sober: [Name] has not checked in to confirm their sobriety. Please reach
         </div>
 
         <footer>
-            <p>&copy; 2025 Are You Sober?</p>
+            <p>&copy; 2025 Are You SOS?</p>
         </footer>
     </div>
 </body>
